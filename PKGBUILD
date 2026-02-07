@@ -5,7 +5,7 @@ pkgdesc="Minimal Flask web interface for chatting with Ollama models"
 arch=("any")
 url="https://github.com/eldablo23307/ollama_web"
 license=("MIT")
-depends=("python" "python-flask" "python-ollama")
+depends=("python" "python-flask" "python-pip")
 makedepends=("git" "python-build" "python-installer" "python-setuptools" "python-wheel")
 provides=("ollama-web")
 conflicts=("ollama-web")
@@ -31,6 +31,9 @@ build() {
 package() {
   cd "$srcdir/ollama_web"
   python -m installer --destdir="$pkgdir" dist/*.whl
+  
+  # Installa ollama da pip
+  PIP_CONFIG_FILE=/dev/null pip install --isolated --root="$pkgdir" --ignore-installed --no-deps ollama
   
   # Installa la licenza
   install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
