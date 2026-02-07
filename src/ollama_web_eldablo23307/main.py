@@ -1,6 +1,7 @@
 import flask
 from flask import request
-import model_chat
+from . import model_chat
+
 
 app = flask.Flask(__name__)
 current_chat = []
@@ -21,5 +22,5 @@ def chat_return():
     return "Only POST method allow"
 
 def main():
-    if __name__ == "__main__":
-        app.run(host="0.0.0.0")
+    app.run(host="0.0.0.0")
+
