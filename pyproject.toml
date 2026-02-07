@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ollama_web_eldablo23307"
+version = "1.0.0"
+authors = [
+    {name = "eldablo23307"}
+]
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+license-files = ["LICEN[CS]E*", "LICENSE.txt"]
+
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "ollama",
+    "flask",
+]
+
+[project.urls]
+Homepage = "https://github.com/eldablo23307/ollama_web"
+Issues = "https://github.com/eldablo23307/ollama_web/issues"
