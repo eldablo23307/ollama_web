@@ -20,6 +20,6 @@ def chat_return():
         return "<script>window.location.href ='/'</script>"
     return "Only POST method allow"
 
-
-if __name__ == "__main__":
-    app.run(host="0.0.0.0")
+def main():
+    if __name__ == "__main__":
+        app.run(host="0.0.0.0")

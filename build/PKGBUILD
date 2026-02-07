@@ -1,21 +1,39 @@
-pkgname=ollama_web
-pkgver=1.0.0
+pkgname=ollama-web-git
+pkgver=0
 pkgrel=1
-pkgdesc="Ollama Web UI"
+pkgdesc="Web UI per Ollama scritta in Python"
 arch=('any')
 url="https://github.com/eldablo23307/ollama_web"
 license=('MIT')
-depends=('python' 'python-flask' 'python-ollama')
-makedepends=('python-setuptools')
-source=("ollama_web$pkgver.tar.gz::$url/archive/v$pkgver.tar.gz")
+
+depends=(
+  'python'
+  'python-ollama'
+  'python-flask'
+)
+
+makedepends=(
+  'git'
+  'python-build'
+  'python-installer'
+)
+
+source=("git+$url.git")
 sha256sums=('SKIP')
 
+pkgver() {
+  cd "$srcdir/ollama_web"
+  printf "r%s.%s" \
+    "$(git rev-list --count HEAD)" \
+    "$(git rev-parse --short HEAD)"
+}
+
 build() {
-  cd "$srcdir/$pkgname-$pkgver"
+  cd "$srcdir/ollama_web"
   python -m build --wheel --no-isolation
 }
 
 package() {
-  cd "$srcdir/$pkgname-$pkgver"
+  cd "$srcdir/ollama_web"
   python -m installer --destdir="$pkgdir" dist/*.whl
 }

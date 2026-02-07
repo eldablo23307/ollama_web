@@ -3,10 +3,11 @@ requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "ollama_web"
+name = "ollama-web"
 version = "1.0.0"
 authors = [{name="eldablo23307"}]
-dependencies = ["ollama", "flask"]
+dependencies = ["flask", "ollama"]
 
 [project.scripts]
 ollama-web = "ollama_web_eldablo23307.main:main"
+
