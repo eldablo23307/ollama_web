@@ -1,5 +1,5 @@
 pkgname=ollama-web-git
-pkgver=1.0.0.r0.g0000000
+pkgver=r1.0000000
 pkgrel=1
 pkgdesc="Minimal Flask web interface for chatting with Ollama models"
 arch=("any")
@@ -14,13 +14,7 @@ sha256sums=("SKIP")
 
 pkgver() {
   cd "$srcdir/ollama_web"
-  local version
-  version=$(git describe --long --tags --abbrev=7 --match "v*" 2>/dev/null)
-  if [[ -n "$version" ]]; then
-    printf "%s" "${version#v}" | sed "s/-/.r/; s/-/./"
-  else
-    printf "0.r%s.g%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short=7 HEAD)"
-  fi
+  printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short=7 HEAD)"
 }
 
 build() {
