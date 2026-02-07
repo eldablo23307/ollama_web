@@ -1,18 +1,18 @@
 [build-system]
-requires = ["setuptools>=61.0"]
+requires = ["setuptools>=68.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "ollama_web"
+name = "ollama-web"
 version = "1.0.0"
 description = "Web interface for Ollama"
 readme = "README.md"
-license = { file = "LICENSE" }
-authors = [
-  { name="eldablo23307" }
-]
+authors = [{name = "eldablo23307"}]
 requires-python = ">=3.9"
-dependencies = ["ollama", "flask"]
+dependencies = [
+    "ollama",
+    "flask",
+]
 
 [project.scripts]
 ollama-web = "ollama_web.__main__:main"
@@ -22,7 +22,6 @@ Homepage = "https://github.com/eldablo23307/ollama_web"
 
 [tool.setuptools]
 package-dir = {"" = "src"}
-include-package-data = true
 
 [tool.setuptools.packages.find]
 where = ["src"]
