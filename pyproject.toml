@@ -7,12 +7,25 @@ name = "ollama_web"
 version = "1.0.0"
 description = "Web interface for Ollama"
 readme = "README.md"
-license = "MIT"
+license = { file = "LICENSE" }
 authors = [
   { name="eldablo23307" }
 ]
 requires-python = ">=3.9"
 dependencies = ["ollama", "flask"]
 
+[project.scripts]
+ollama-web = "ollama_web.__main__:main"
+
 [project.urls]
 Homepage = "https://github.com/eldablo23307/ollama_web"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+ollama_web = ["templates/*.jinja"]
