@@ -27,12 +27,6 @@ pip install .
 Start the Flask server:
 
 ```bash
-ollama-web
-```
-
-You can also run the module directly:
-
-```bash
 python -m ollama_web
 ```
 
@@ -56,3 +50,9 @@ If the app cannot select a valid model, the backend returns an error message:
 ## Notes
 - The app only displays the latest model response (no chat history).
 - Make sure Ollama is running and at least one model has been pulled.
+
+## To-DO
+- [ ] Improve UI
+- [ ] Chat history
+- [ ] Multi media file support
+- [ ] Transform this project in an AUR packet
