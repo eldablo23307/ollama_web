@@ -1,0 +1,18 @@
+pkgbase = ollama-web-git
+	pkgdesc = Minimal Flask web interface for chatting with Ollama models
+	pkgver = 1.0.0.r0.g0000000
+	pkgrel = 1
+	url = https://github.com/eldablo23307/ollama_web
+	arch = any
+	license = MIT
+	makedepends = git
+	makedepends = python-build
+	makedepends = python-installer
+	makedepends = python-setuptools
+	depends = python
+	depends = python-flask
+	depends = python-ollama
+	source = git+https://github.com/eldablo23307/ollama_web.git
+	sha256sums = SKIP
+
+pkgname = ollama-web-git

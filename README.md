@@ -8,7 +8,7 @@ Minimal Flask web interface for chatting with Ollama models installed on your se
 - Direct integration with Ollama via `python-ollama`.
 
 ## Requirements
-- Python 3.12
+- Python 3.9+
 - Ollama running on the same server where the app is hosted
 - Python dependencies:
   - `flask`
@@ -17,17 +17,23 @@ Minimal Flask web interface for chatting with Ollama models installed on your se
 ## Installation
 1. Clone the project.
 2. Create and activate a virtual environment (optional but recommended).
-3. Install dependencies:
+3. Install the package and its dependencies:
 
 ```bash
-pip install flask ollama
+pip install .
 ```
 
 ## Run the application
 Start the Flask server:
 
 ```bash
-python main.py
+ollama-web
+```
+
+You can also run the module directly:
+
+```bash
+python -m ollama_web
 ```
 
 The app listens on `0.0.0.0:5000`.

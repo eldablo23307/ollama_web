@@ -1,8 +1,9 @@
 import flask
-import model_chat
 from flask import request
 
-app =  flask.Flask("__init__")
+from . import model_chat
+
+app = flask.Flask(__name__)
 current_chat = ""
 
 @app.route("/")
@@ -18,9 +19,4 @@ def chat_return():
         global current_chat
         current_chat = model_chat.chat(input_data, input_model, auto_choose)
         return "<script>window.location.href ='/'</script>"
-    else:
-        return "Only POST method allow"
-
-if __name__ == "__main__":
-    app.run(host="0.0.0.0")
-
+    return "Only POST method allow"
