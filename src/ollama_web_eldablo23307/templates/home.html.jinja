@@ -8,15 +8,21 @@
 
         <div id="chat">
             <h2>Chat</h2>
-            <label id="chat_bot">{{ current_chat }}</label>
+            {% for message in current_chat%}
+                <label>User: {{ message.User }}</label>
+                <br>
+                <label>AI: {{ message.Response }}</label>
+                <br>
+                <br>
+            {% endfor %}
         </div>
         <br>
         <br>
         <hr>
 
-        <form id="user-input" action="/input" method="post" target="_self">
+        <form id="user-input" action="/input" method="post" target="_self" autocomplete="off">
             <input type="text" id="model_name" placeholder="Insert Model Name" name="model_name"><br><br>
-            <input type="checkbox" id="auto_choose" name="auto_choose" value="on">Auto choose model<br><br>
+            <input type="checkbox" id="auto_choose" name="auto_choose" checked>Auto choose model<br><br>
             <input type="text" id="chat_input" placeholder="Insert text" name="chat_input"><br><br>
             <button type="submit">Send</button>
         </form>
