@@ -1,7 +1,6 @@
 import flask
 from flask import request
-
-from . import model_chat
+import model_chat
 
 app = flask.Flask(__name__)
 current_chat = ""
@@ -20,3 +19,7 @@ def chat_return():
         current_chat = model_chat.chat(input_data, input_model, auto_choose)
         return "<script>window.location.href ='/'</script>"
     return "Only POST method allow"
+
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0")
