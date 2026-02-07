@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+src/__init__.py
+src/model_chat.py
+src/ollama_web.egg-info/PKG-INFO
+src/ollama_web.egg-info/SOURCES.txt
+src/ollama_web.egg-info/dependency_links.txt
+src/ollama_web.egg-info/requires.txt
+src/ollama_web.egg-info/top_level.txt

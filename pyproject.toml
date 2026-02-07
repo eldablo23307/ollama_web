@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ollama_web"
+version = "1.0.0"
+description = "Web interface for Ollama"
+readme = "README.md"
+license = "MIT"
+authors = [
+  { name="eldablo23307" }
+]
+requires-python = ">=3.9"
+dependencies = ["ollama", "flask"]
+
+[project.urls]
+Homepage = "https://github.com/eldablo23307/ollama_web"
