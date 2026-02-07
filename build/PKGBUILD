@@ -1,0 +1,21 @@
+pkgname=ollama_web
+pkgver=1.0.0
+pkgrel=1
+pkgdesc="Ollama Web UI"
+arch=('any')
+url="https://github.com/eldablo23307/ollama_web"
+license=('MIT')
+depends=('python' 'python-flask' 'python-ollama')
+makedepends=('python-setuptools')
+source=("ollama_web_eldablo23307$pkgver.tar.gz::$url/archive/v$pkgver.tar.gz")
+sha256sums=('SKIP')
+
+build() {
+  cd "$srcdir/$pkgname-$pkgver"
+  python -m build --wheel --no-isolation
+}
+
+package() {
+  cd "$srcdir/$pkgname-$pkgver"
+  python -m installer --destdir="$pkgdir" dist/*.whl
+}
