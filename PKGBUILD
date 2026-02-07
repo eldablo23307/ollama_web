@@ -9,7 +9,7 @@ depends=("python" "python-flask" "python-pip")
 makedepends=("git" "python-build" "python-installer" "python-setuptools" "python-wheel")
 provides=("ollama-web")
 conflicts=("ollama-web")
-source=("git+https://github.com/eldablo23307/ollama_web.git")
+source=("ollama_web::git+https://github.com/eldablo23307/ollama_web.git")
 sha256sums=("SKIP")
 
 pkgver() {
@@ -19,7 +19,18 @@ pkgver() {
 
 build() {
   cd "$srcdir/ollama_web"
-  python -m build --wheel --no-isolation
+  
+  # Debug: vediamo cosa c'è
+  echo "=== Contenuto directory ==="
+  ls -la
+  
+  # Se pyproject.toml è nella root, questo dovrebbe funzionare
+  if [ -f "pyproject.toml" ]; then
+    python -m build --wheel --no-isolation
+  else
+    echo "ERROR: pyproject.toml non trovato!"
+    return 1
+  fi
 }
 
 package() {
@@ -29,6 +40,8 @@ package() {
   # Installa ollama da pip
   PIP_CONFIG_FILE=/dev/null pip install --isolated --root="$pkgdir" --ignore-installed --no-deps ollama
   
-  # Installa la licenza
-  install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+  # Installa la licenza se esiste
+  if [ -f LICENSE ]; then
+    install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+  fi
 }
