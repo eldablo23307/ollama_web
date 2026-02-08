@@ -1,13 +1,14 @@
 <!DOCTYPE html>
     <head>
         <title>Ollama_Web</title>
+        <link rel="stylesheet" href={{ url_for('static', filename="style/style.css") }}>
     </head>
     <body>
         <h1>Ollama_Web</h1>
-        <hr>
 
         <div id="chat">
             <h2>Chat</h2>
+            <hr>
             {% for message in current_chat%}
                 <label>User: {{ message.User }}</label>
                 <br>
@@ -18,7 +19,6 @@
         </div>
         <br>
         <br>
-        <hr>
 
         <form id="user-input" action="/input" method="post" target="_self" autocomplete="off">
             <input type="text" id="model_name" placeholder="Insert Model Name" name="model_name"><br><br>

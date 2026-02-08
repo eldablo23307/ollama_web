@@ -1,7 +1,7 @@
 pkgname=ollama-web-git
 pkgver=0
 pkgrel=1
-pkgdesc="Web UI per Ollama scritta in Python"
+pkgdesc="Web UI for Ollama"
 arch=('any')
 url="https://github.com/eldablo23307/ollama_web"
 license=('MIT')
