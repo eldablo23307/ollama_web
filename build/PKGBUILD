@@ -1,4 +1,4 @@
-pkgname=ollama-web-git
+pkgname=ollama-web
 pkgver=0
 pkgrel=1
 pkgdesc="Web UI for Ollama"
