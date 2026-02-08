@@ -16,21 +16,10 @@ Minimal Flask web interface for chatting with Ollama models installed on your se
 
 ## Installation
 1. Clone the project.
-2. Create and activate a virtual environment (optional but recommended).
-3. Install the package and its dependencies:
-
-```bash
-pip install .
-```
-
-## Run the application
-Start the Flask server:
-
-```bash
-python -m ollama_web
-```
-
-The app listens on `0.0.0.0:5000`.
+2. Move to the cloned project ```cd ollama-web```
+3. Move to the buil directory ``` cd build ```
+4. Build the package ``` makepkg -si ```
+5. After the installation use the ``` ollama-web``` to run the programm
 
 ## Usage
 1. Open your browser at `http://localhost:5000`.
@@ -48,7 +37,6 @@ If the app cannot select a valid model, the backend returns an error message:
 - **402**: requested model not found among available models.
 
 ## Notes
-- The app only displays the latest model response (no chat history).
 - Make sure Ollama is running and at least one model has been pulled.
 
 ## To-DO
