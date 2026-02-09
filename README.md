@@ -19,7 +19,7 @@ Minimal Flask web interface for chatting with Ollama models installed on your se
 2. Move to the cloned project ```cd ollama-web```
 3. Move to the buil directory ``` cd build ```
 4. Build the package ``` makepkg -si ```
-5. After the installation use the ``` ollama-web``` to run the programm
+5. After the installation use the ``` ollama_web``` to run the programm
 
 ## Usage
 1. Open your browser at `http://localhost:5000`.
