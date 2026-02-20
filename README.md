@@ -43,5 +43,5 @@ If the app cannot select a valid model, the backend returns an error message:
 - [ ] Improve UI
 - [x] Chat history
 - [ ] Multi media file support
-- [ ] Save Old Chat
-- [ ] Transform this project in an AUR packet
+- [x] Save Old Chat
+- [x] Transform this project in an AUR packet
